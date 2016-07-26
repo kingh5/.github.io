@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gulp-1的使用 | 程序员小鲁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是一篇gulp文章，用于了解和总结应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp-1的使用">
+<meta property="og:url" content="http://yoursite.com/2016/04/15/gulp-1/index.html">
+<meta property="og:site_name" content="程序员小鲁">
+<meta property="og:description" content="这是一篇gulp文章，用于了解和总结应用。">
+<meta property="og:image" content="http://yoursite.com/img/图片1.png">
+<meta property="og:image" content="http://yoursite.com/img/图片2.png">
+<meta property="og:updated_time" content="2016-07-25T09:58:37.172Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp-1的使用">
+<meta name="twitter:description" content="这是一篇gulp文章，用于了解和总结应用。">
+<meta name="twitter:image" content="http://yoursite.com/img/图片1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="程序员小鲁" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+    <!-- 加载特效 -->
+    
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+    
+    <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">鲁超群</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="../../../../index.html">博客首页</a></li>
+                        
+                            <li><a href="../../../../works">作品展示</a></li>
+                        
+                            <li><a href="../../../../about">留言打卡</a></li>
+                        
+                            <li><a href="../../../../404">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="../../../../index.html" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="http://git.oschina.net/goodh5" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/lu-chao-qun-63" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/u/5979213215/" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="../../../../tags/gulp/" style="font-size: 20px;">gulp</a> <a href="../../../../tags/node/" style="font-size: 10px;">node</a> <a href="../../../../tags/php后端/" style="font-size: 10px;">php后端</a> <a href="../../../../tags/php环境配置/" style="font-size: 10px;">php环境配置</a> <a href="../../../../tags/代码压缩/" style="font-size: 20px;">代码压缩</a> <a href="../../../../tags/文件合并/" style="font-size: 20px;">文件合并</a> <a href="../../../../tags/服务器/" style="font-size: 10px;">服务器</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">尹少</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">张小飞</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">邵波</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱运动、爱交友、爱旅行、爱生活、喜欢迎接新的挑战，在代码中突破自我！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">鲁超群</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">鲁超群</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="../../../../index.html">博客首页</a></li>
+                
+                    <li><a href="../../../../works">作品展示</a></li>
+                
+                    <li><a href="../../../../about">留言打卡</a></li>
+                
+                    <li><a href="../../../../404">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="../../../../index.html" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="http://git.oschina.net/goodh5" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lu-chao-qun-63" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/u/5979213215/" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-gulp-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+      <time datetime="2016-04-15T13:52:03.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp-1的使用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="../../../../categories/gulp使用/">gulp使用</a><a class="article-category-link" href="../../../../categories/gulp使用/html5/">html5</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/代码压缩/">代码压缩</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/文件合并/">文件合并</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="gulp的详细介绍"><a href="#gulp的详细介绍" class="headerlink" title="gulp的详细介绍"></a>gulp的详细介绍</h2><h3 id="What-is-gulp"><a href="#What-is-gulp" class="headerlink" title="What is gulp?"></a>What is gulp?</h3><p>gulp是前端开发过程中一种基于流的代码构建工具，是自动化项目的构建利器；她不仅能对网站资源进行优化，而且在开发过程中很多重复的任务能够使用正确的工具自动完成；使用她，不仅可以很愉快的编写代码，而且大大提高我们的工作效率。</p>
+<p>gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript、coffee、sass、less、html/image、css 等文件的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。在实现上，她借鉴了Unix操作系统的管道（pipe）思想，前一级的输出，直接变成后一级的输入，使得在操作上非常简单。<br><img src="/img/图片1.png" alt=""></p>
+<h3 id="流-stream"><a href="#流-stream" class="headerlink" title="流(stream)"></a>流(stream)</h3><p>简单来说就是建立在面向对象基础上的一种抽象的处理数据的工具。在流中，定义了一些处理数据的基本操作，如读取数据，写入数据等，程序员是对流进行所有操作的，而不用关心流的另一头数据的真正流向。流不但可以处理文件，还可以处理动态内存、网络数据等多种数据形式。</p>
+<p>而gulp正是通过流和代码优于配置的策略来尽量简化任务编写的工作。这看起来有点“像jQuery”的方法，把动作串起来创建构建任务。早在Unix的初期，流就已经存在了。流在Node.js生态系统中也扮演了重要的角色，类似于*nix将几乎所有设备抽象为文件一样，Node将几乎所有IO操作都抽象成了stream的操作。因此用gulp编写任务也可看作是用Node.js编写任务。当使用流时，gulp去除了中间文件，只将最后的输出写入磁盘，整个过程因此变得更快。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li><code>易于使用</code>:通过代码优于配置的策略，gulp 让简单的任务简单，复杂的任务可管理。</li>
+<li><code>构建快速</code>:利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</li>
+<li><code>易于学习</code>:通过最少的 API，掌握 gulp 毫不费力，构建工作尽在掌握：如同一系列流管道。</li>
+<li><code>插件高质</code>:gulp 严格的插件指南确保插件如你期望的那样简洁高质得工作。</li>
+</ul>
+<h2 id="gulp的使用"><a href="#gulp的使用" class="headerlink" title="gulp的使用"></a>gulp的使用</h2><h3 id="gulp的安装"><a href="#gulp的安装" class="headerlink" title="gulp的安装"></a>gulp的安装</h3><p>首先确保你已经正确安装了nodejs环境。然后以全局方式安装gulp：<br><code>1.npm install -g gulp</code></p>
+<p>全局安装gulp后，还需要在每个要使用gulp的项目中都单独安装一次。把目录切换到你的项目文件夹中，然后在命令行中执行：<br><code>2.npm install gulp</code></p>
+<p>如果想在安装的时候把gulp写进项目package.json文件的依赖中，则可以加上–save-dev：<br><code>2.npm install --save-dev gulp</code></p>
+<p>通过上面的两个步骤，就完成了gulp的安装，接下来就可以在项目中应用gulp了</p>
+<h3 id="gulp的使用-1"><a href="#gulp的使用-1" class="headerlink" title="gulp的使用"></a>gulp的使用</h3><p>1.建立gulpfile.js文件</p>
+<blockquote>
+<p>gulp也需要一个文件作为它的主文件，在gulp中这个文件叫做gulpfile.js。新建一个文件名为gulpfile.js的文件，然后放到你的项目目录中。之后要做的事情就是在gulpfile.js文件中定义我们的任务了。下面是一个最简单的gulpfile.js文件内容示例，它定义了一个默认的任务。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var gulp = require(<span class="string">'gulp'</span>);</div><div class="line">gulp.task(<span class="string">'default'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    console.log(<span class="string">'hello world'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>此时我们的目录结构是这样子的：<img src="/img/图片2.png" alt=""><br>2.运行gulp任务</p>
+<blockquote>
+<p>要运行gulp任务，只需切换到存放gulpfile.js文件的目录(windows平台请使用cmd或者Power Shell等工具)，然后在命令行中执行gulp命令就行了，gulp后面可以加上要执行的任务名，例如gulp task1，如果没有指定任务名，则会执行任务名为default的默认任务。</p>
+</blockquote>
+<hr>
+<h2 id="友情提醒"><a href="#友情提醒" class="headerlink" title="友情提醒"></a>友情提醒</h2><p>如有疑问和错误之处，请告知<a href="http://weibo.com/5979213215/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="_blank" rel="external">程序员小鲁</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="copyright">
+    <p><span>本文标题:</span><a href="">gulp-1的使用</a></p>
+    <p><span>文章作者:</span><a href="/" title="请访问 鲁超群 博客">鲁超群</a></p>
+    <!-- <p><span>发布时间:</span>2016年04月15日 - 21时52分</p> -->
+    <!-- <p><span>最后更新:</span>2016年07月25日 - 17时58分</p> -->
+    <p>
+        <span>原始链接:</span><a class="post-url" href="" title="gulp-1的使用">http://yoursite.com/2016/04/15/gulp-1/</a>
+        <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/15/gulp-1/　　作者: 鲁超群" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+        <script src="/js/clipboard.min.js"></script>
+        <script> var clipboard = new Clipboard('.copy-path'); </script>
+    </p>
+    <p>
+        <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+<nav id="article-nav">
+    
+    <a href="../../16/gulp-2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"><</strong>
+        <div class="article-nav-title">
+            
+            gulp-2的工作方式
+            
+        </div>
+    </a>
+    
+    
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gulp的详细介绍"><span class="toc-number">1.</span> <span class="toc-text">gulp的详细介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-gulp"><span class="toc-number">1.1.</span> <span class="toc-text">What is gulp?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流-stream"><span class="toc-number">1.2.</span> <span class="toc-text">流(stream)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-number">1.3.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gulp的使用"><span class="toc-number">2.</span> <span class="toc-text">gulp的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gulp的安装"><span class="toc-number">2.1.</span> <span class="toc-text">gulp的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gulp的使用-1"><span class="toc-number">2.2.</span> <span class="toc-text">gulp的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#友情提醒"><span class="toc-number">3.</span> <span class="toc-text">友情提醒</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/15/gulp-1/" data-title="gulp-1的使用" data-url="http://yoursite.com"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="../../16/gulp-2/" title="上一篇: gulp-2的工作方式">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../07/15/hello-world/">nodeJS服务器使用</a></li><li class="post-list-item"><a class="post-list-link" href="../../../06/08/angular-4进阶阶段/">angularJS进阶阶段(4)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../06/08/angular-3进阶阶段/">angularJS进阶阶段(3)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../06/05/angular-2进阶阶段/">angularJS进阶阶段(2)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/25/angular-1进阶阶段/">angularJS进阶阶段(1)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/23/angular-2基础总结/">angular基础总结(2)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/22/angular-1基础总结/">angular基础总结(1)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/05/phpstorm环境配置/">phpStorm编辑器环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="../../18/gulp-4/">gulp-4的项目实践</a></li><li class="post-list-item"><a class="post-list-link" href="../../16/gulp-3/">gulp-3的插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../16/gulp-2/">gulp-2的工作方式</a></li><li class="post-list-item"><a class="post-list-link" href="">gulp-1的使用</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 鲁超群
+            </div>
+            <div class="footer-right">
+                个人博客，如有错误请联系贴吧--
+                <a href="http://tieba.baidu.com/home/main?id=8940b3ccd0f2d4b1d0a1c2b3309e&fr=userbar"
+                                                                           target="_blank">程序员小鲁</a>
+            </div>
+        </div>
+
+    </div>
+
+    </script>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="../../../../js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?true";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

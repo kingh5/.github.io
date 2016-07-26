@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>angularJS进阶阶段(1) | 程序员小鲁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是一篇angular文章，主要讲解angular的功能代码和详细说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularJS进阶阶段(1)">
+<meta property="og:url" content="http://yoursite.com/2016/05/25/angular-1进阶阶段/index.html">
+<meta property="og:site_name" content="程序员小鲁">
+<meta property="og:description" content="这是一篇angular文章，主要讲解angular的功能代码和详细说明">
+<meta property="og:image" content="http://yoursite.com/img/angular-1进阶1.png">
+<meta property="og:image" content="http://yoursite.com/img/angular-1进阶2.png">
+<meta property="og:image" content="http://yoursite.com/img/angular-1进阶3.png">
+<meta property="og:updated_time" content="2016-07-25T13:11:25.999Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularJS进阶阶段(1)">
+<meta name="twitter:description" content="这是一篇angular文章，主要讲解angular的功能代码和详细说明">
+<meta name="twitter:image" content="http://yoursite.com/img/angular-1进阶1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="程序员小鲁" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+    <!-- 加载特效 -->
+    
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+    
+    <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">鲁超群</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="../../../../index.html">博客首页</a></li>
+                        
+                            <li><a href="../../../../works">作品展示</a></li>
+                        
+                            <li><a href="../../../../about">留言打卡</a></li>
+                        
+                            <li><a href="../../../../404">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="../../../../index.html" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="http://git.oschina.net/goodh5" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/lu-chao-qun-63" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/u/5979213215/" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="../../../../tags/gulp/" style="font-size: 20px;">gulp</a> <a href="../../../../tags/node/" style="font-size: 10px;">node</a> <a href="../../../../tags/php后端/" style="font-size: 10px;">php后端</a> <a href="../../../../tags/php环境配置/" style="font-size: 10px;">php环境配置</a> <a href="../../../../tags/代码压缩/" style="font-size: 20px;">代码压缩</a> <a href="../../../../tags/文件合并/" style="font-size: 20px;">文件合并</a> <a href="../../../../tags/服务器/" style="font-size: 10px;">服务器</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">尹少</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">张小飞</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">邵波</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱运动、爱交友、爱旅行、爱生活、喜欢迎接新的挑战，在代码中突破自我！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">鲁超群</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">鲁超群</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="../../../../index.html">博客首页</a></li>
+                
+                    <li><a href="../../../../works">作品展示</a></li>
+                
+                    <li><a href="../../../../about">留言打卡</a></li>
+                
+                    <li><a href="../../../../404">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="../../../../index.html" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="http://git.oschina.net/goodh5" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lu-chao-qun-63" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/u/5979213215/" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-angular-1进阶阶段" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+      <time datetime="2016-05-25T02:05:09.000Z" itemprop="datePublished">2016-05-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angularJS进阶阶段(1)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="../../../../categories/gulp使用/">gulp使用</a><a class="article-category-link" href="../../../../categories/gulp使用/html5/">html5</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/代码压缩/">代码压缩</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/文件合并/">文件合并</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="angularJS进阶阶段-1"><a href="#angularJS进阶阶段-1" class="headerlink" title="angularJS进阶阶段(1)"></a>angularJS进阶阶段(1)</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>AngularJS引入了三个主要的概念，期望让前端开发更系统化一些：<br>1.声明式界面开发<br>2.双向数据绑定<br>3.使用依赖注入解耦</p>
+<h3 id="起点：声明化"><a href="#起点：声明化" class="headerlink" title="起点：声明化"></a>起点：声明化</h3><blockquote>
+<p>基于前面的示例，我们容易感受到使用AngularJS进行应用开发的一个重要的思维模式： 从构造声明式界面入手。<br>在使用AngularJS进行前端开发时，始终应该从构造声明式界面模板开始，如果现成的指令不够 用，那么就定义自己的指令、实现自己的指令。这是一个迭代的过程。<br> 记住，指令是新型的API，用界面的声明化作为需求，来指导我们的代码封装。<br> <img src="/img/angular-1进阶1.png" alt=""></p>
+<h3 id="层级的作用域"><a href="#层级的作用域" class="headerlink" title="层级的作用域"></a>层级的作用域</h3><p>在AngularJS中，ng-app开始的DOM子树上，每个DOM对象都有一个对应的scope对象。 比如，在我们的示例中，body对象对应一个scope对象（因为body元素有ng-app属性，所以 这个scope就是$rootScope对象），ez-namecard对象也对应一个scope对象……<br> <img src="/img/angular-1进阶2.png" alt=""><br>在默认情况下，一个DOM子元素不会创建新的作用域，也就是说，这个子元素所对应的 scope对象，其实就是它的最近一级的祖先对象对应的scope对象。比如，在我们的例子中， ez-namecard对应的scope对象，就是它的父对象即body对象的scope对象，恰好也就是 $rootScope对象；而ez-namecard有3个div子元素对应的scope对象，也是$rootScope对象。<br>有些指令会导致创建新的作用域，比如ng-controller。如果在一个DOM对象上创建了新 的作用域，那么这个scope对象的原型是其最近一级的组件对象的scope对象。</p>
+</blockquote>
+<h3 id="监听数据的变化"><a href="#监听数据的变化" class="headerlink" title="监听数据的变化"></a>监听数据的变化</h3><p>AngularJS的scope对象可以使用$watch()方法，对建立在其上的变量的变化进行监听：<br><code>1.$watch(watchExpression, listener, [objectEquality]);</code><br>$watch方法要求传入三个参数：</p>
+<ul>
+<li>watchExpression - 要监听的表达式，比如：”sb”</li>
+<li>listener - 变化发生时的回调函数，AngularJS将向这个函数传入新值和旧值</li>
+<li>objectEquality - 如果监听表达式的值是一个对象，应当将这个参数置为true。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script src=<span class="string">"http://lib.sinaapp.com/js/angular.js/angular-1.2.19/angular.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=<span class="string">"ezstuff"</span> ng-init=<span class="string">"sb = &#123;name:'somebody',gender:'male',age:28&#125;"</span>&gt;</div><div class="line">	&lt;ez-namecard data=<span class="string">"sb"</span>&gt;&lt;/ez-namecard&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"></div><div class="line">angular.module(<span class="string">"ezstuff"</span>,[])</div><div class="line">.directive(<span class="string">"ezNamecard"</span>,<span class="keyword">function</span>(<span class="variable">$rootScope</span>)&#123;</div><div class="line">	<span class="built_in">return</span> &#123;</div><div class="line">		restrict : <span class="string">"E"</span>,</div><div class="line">		template : <span class="string">"&lt;div class='namecard'&gt;"</span>,</div><div class="line">		replace : <span class="literal">true</span>,</div><div class="line">		link : <span class="keyword">function</span>(scope,element,attrs)&#123;</div><div class="line">			element.append(<span class="string">"&lt;div&gt;name : &lt;span class='name'&gt;&lt;/span&gt;&lt;/div&gt;"</span>)</div><div class="line">				.append(<span class="string">"&lt;div&gt;gender : &lt;span field='gender'&gt;&lt;/span&gt;&lt;/div&gt;"</span>)</div><div class="line">				.append(<span class="string">"&lt;div&gt;age : &lt;span field='age'&gt;&lt;/span&gt;&lt;/div&gt;"</span>)</div><div class="line"></div><div class="line">			//监听sb变量的变化，并在变化时更新DOM</div><div class="line">			scope.<span class="variable">$watch</span>(attrs.data,<span class="keyword">function</span>(nv,ov)&#123;</div><div class="line">				var fields = element.find(<span class="string">"span"</span>);</div><div class="line">				fields[0].textContent = nv.name;</div><div class="line">				fields[1].textContent = nv.gender;</div><div class="line">				fields[2].textContent = nv.age;</div><div class="line">			&#125;,<span class="literal">true</span>);</div><div class="line"></div><div class="line">			//验证代码，1秒改变1次age的值</div><div class="line">			<span class="built_in">set</span>Interval(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">				scope.<span class="variable">$apply</span>(<span class="string">"sb.age=sb.age+1;"</span>)</div><div class="line">			&#125;,1000);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="如何修改数据"><a href="#如何修改数据" class="headerlink" title="如何修改数据"></a>如何修改数据</h3><p>我们定义一个新的指令：ez-namecard-editor用来修改数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;name : &lt;input <span class="built_in">type</span>=<span class="string">'text'</span>&gt; &lt;/li&gt;</div><div class="line">    &lt;li&gt;gender : &lt;input <span class="built_in">type</span>=<span class="string">'text'</span>&gt; &lt;/li&gt;</div><div class="line">    &lt;li&gt;age : &lt;input <span class="built_in">type</span>=<span class="string">'text'</span>&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在ez-namecard-editor的指令实现中，为了用input中的值自动更新 sb变量中的值，我们需要在给input对象挂接上监听函数（示例中使用keyup事件）， 在监听函数中实现对sb变量的修改。<br>最终的效果是，用户在界面上进行的操作，自动地同步到了我们的数据。这时，我们称， 已经建立了从界面到数据的单向绑定。</p>
+</blockquote>
+<p>&gt;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script src=<span class="string">"http://lib.sinaapp.com/js/angular.js/angular-1.2.19/angular.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body ng-app=<span class="string">"ezstuff"</span> ng-init=<span class="string">"sb = &#123;name:'somebody',gender:'male',age:28&#125;"</span>&gt;</div><div class="line">	&lt;!-- 下面两个指令都绑定到变量sb上--&gt;</div><div class="line">	&lt;ez-namecard-editor data=<span class="string">"sb"</span>&gt;&lt;/ez-namecard-editor&gt;</div><div class="line">	&lt;div ez-logger data=<span class="string">"sb"</span>&gt;&lt;/div&gt;&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">angular.module(<span class="string">"ezstuff"</span>,[])</div><div class="line">.directive(<span class="string">"ezNamecardEditor"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	<span class="built_in">return</span> &#123;</div><div class="line">		restrict : <span class="string">"E"</span>,</div><div class="line">		template : <span class="string">"&lt;ul class='nceditor'&gt;&lt;/ul&gt;"</span>,</div><div class="line">		replace : <span class="literal">true</span>,</div><div class="line">		link : <span class="keyword">function</span>(scope,element,attrs)&#123;</div><div class="line">			//获得变量名称</div><div class="line">			var model = attrs.data;</div><div class="line"></div><div class="line">			//展开HTML模板，使用field属性标记对应字段</div><div class="line">			element.append(<span class="string">"&lt;li&gt;name : &lt;input type='text' field='name'&gt;&lt;/li&gt;"</span>)</div><div class="line">				.append(<span class="string">"&lt;li&gt;gender : &lt;input type='text' field='gender'&gt;&lt;/li&gt;"</span>)</div><div class="line">				.append(<span class="string">"&lt;li&gt;age : &lt;input type='text' field='age'&gt;&lt;/li&gt;"</span>);</div><div class="line"></div><div class="line">			//监听DOM事件，变化时修改变量值</div><div class="line">			element.find(<span class="string">"input"</span>).on(<span class="string">"keyup"</span>,<span class="keyword">function</span>(ev)&#123;</div><div class="line">				var field = ev.target.getAttribute(<span class="string">"field"</span>);</div><div class="line">				scope[model][field] = ev.target.value;</div><div class="line">				//将对scope的修改进行传播</div><div class="line">				scope.<span class="variable">$apply</span>(<span class="string">""</span>);</div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;)</div><div class="line">.directive(<span class="string">"ezLogger"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	<span class="built_in">return</span> &#123;</div><div class="line">		restrict : <span class="string">"A"</span>,</div><div class="line">		link : <span class="keyword">function</span>(scope,element,attrs)&#123;</div><div class="line">			var model = attrs.data;</div><div class="line"></div><div class="line">			scope.<span class="variable">$watch</span>(model,<span class="keyword">function</span>(nv)&#123;</div><div class="line">				var cnt = JSON.stringify(nv,null,<span class="string">"	"</span>);</div><div class="line">				element.html(<span class="string">"&lt;pre&gt;"</span>+cnt+<span class="string">"&lt;/pre	"</span>);</div><div class="line">			&#125;,<span class="literal">true</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="数据变化的传播"><a href="#数据变化的传播" class="headerlink" title="数据变化的传播"></a>数据变化的传播</h3><blockquote>
+<p>数据绑定有两个方向：</p>
+</blockquote>
+<ul>
+<li>数据 → 界面：我们使用scope对象的$watch()方法监听数据的变化，来更新界面。</li>
+<li>界面 → 数据：我们在界面的DOM对象上监听变化事件，来更新数据，并通过$apply()方法传播变化。<br><img src="/img/angular-1进阶3.png" alt=""></li>
+</ul>
+<blockquote>
+<p>上面的图中，我们把ez-namecard和ez-namecard-editor都绑定到同一个sb对象上，那么在 ez-namecard-editor上进行编辑，将导致sb对象发生变化；由于ez-namecard监听了这个变化， 所以，ez-namecard的显示也应该变化。</p>
+<ol>
+<li>$watch()<br>每个scope对象都维护了一个私有的监听队列，每次当我们在scope上执行一次$watch方法，就相当于 向这个监听队列里塞入一个监听函数。</li>
+<li>$apply()<br>为了捕捉对数据的修改，AngularJS要求开发者使用scope对象的$apply方法对数据进行修改， $apply方法内部会自动地调用监听队列里的监听函数，比如：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//方法1：直接修改sb对象. 不会自动触发监听函数</div><div class="line">scope.sb.name = <span class="string">'Tonny'</span>;</div><div class="line"> </div><div class="line">//方法2：使用scope的<span class="variable">$apply</span>方法，在数据修改后会自动触发监听函数</div><div class="line">scope.<span class="variable">$apply</span>(<span class="string">"sb.name = 'Tonny'"</span>);</div><div class="line"> </div><div class="line">//方法3：直接修改sb对象，然后调用<span class="variable">$apply</span>方法来传播变化。</div><div class="line">scope.sb.name = <span class="string">'Tonny'</span>;</div><div class="line">scope.<span class="variable">$apply</span>(<span class="string">""</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="友情提醒"><a href="#友情提醒" class="headerlink" title="友情提醒"></a>友情提醒</h2><p>如有疑问和错误之处，请告知<a href="http://weibo.com/5979213215/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="_blank" rel="external">程序员小鲁</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="copyright">
+    <p><span>本文标题:</span><a href="">angularJS进阶阶段(1)</a></p>
+    <p><span>文章作者:</span><a href="/" title="请访问 鲁超群 博客">鲁超群</a></p>
+    <!-- <p><span>发布时间:</span>2016年05月25日 - 10时05分</p> -->
+    <!-- <p><span>最后更新:</span>2016年07月25日 - 21时11分</p> -->
+    <p>
+        <span>原始链接:</span><a class="post-url" href="" title="angularJS进阶阶段(1)">http://yoursite.com/2016/05/25/angular-1进阶阶段/</a>
+        <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/25/angular-1进阶阶段/　　作者: 鲁超群" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+        <script src="/js/clipboard.min.js"></script>
+        <script> var clipboard = new Clipboard('.copy-path'); </script>
+    </p>
+    <p>
+        <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+<nav id="article-nav">
+    
+    <a href="../../../06/05/angular-2进阶阶段/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"><</strong>
+        <div class="article-nav-title">
+            
+            angularJS进阶阶段(2)
+            
+        </div>
+    </a>
+    
+    
+    <a href="../../23/angular-2基础总结/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">angular基础总结(2)</div>
+        <strong class="article-nav-caption">></strong>
+    </a>
+    
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#angularJS进阶阶段-1"><span class="toc-number">1.</span> <span class="toc-text">angularJS进阶阶段(1)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#起点：声明化"><span class="toc-number">1.2.</span> <span class="toc-text">起点：声明化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层级的作用域"><span class="toc-number">1.3.</span> <span class="toc-text">层级的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监听数据的变化"><span class="toc-number">1.4.</span> <span class="toc-text">监听数据的变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何修改数据"><span class="toc-number">1.5.</span> <span class="toc-text">如何修改数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据变化的传播"><span class="toc-number">1.6.</span> <span class="toc-text">数据变化的传播</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#友情提醒"><span class="toc-number">2.</span> <span class="toc-text">友情提醒</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/05/25/angular-1进阶阶段/" data-title="angularJS进阶阶段(1)" data-url="http://yoursite.com"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="../../../06/05/angular-2进阶阶段/" title="上一篇: angularJS进阶阶段(2)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="../../23/angular-2基础总结/" title="下一篇: angular基础总结(2)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../07/15/hello-world/">nodeJS服务器使用</a></li><li class="post-list-item"><a class="post-list-link" href="../../../06/08/angular-4进阶阶段/">angularJS进阶阶段(4)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../06/08/angular-3进阶阶段/">angularJS进阶阶段(3)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../06/05/angular-2进阶阶段/">angularJS进阶阶段(2)</a></li><li class="post-list-item"><a class="post-list-link" href="">angularJS进阶阶段(1)</a></li><li class="post-list-item"><a class="post-list-link" href="../../23/angular-2基础总结/">angular基础总结(2)</a></li><li class="post-list-item"><a class="post-list-link" href="../../22/angular-1基础总结/">angular基础总结(1)</a></li><li class="post-list-item"><a class="post-list-link" href="../../05/phpstorm环境配置/">phpStorm编辑器环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/18/gulp-4/">gulp-4的项目实践</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/16/gulp-3/">gulp-3的插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/16/gulp-2/">gulp-2的工作方式</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/15/gulp-1/">gulp-1的使用</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 鲁超群
+            </div>
+            <div class="footer-right">
+                个人博客，如有错误请联系贴吧--
+                <a href="http://tieba.baidu.com/home/main?id=8940b3ccd0f2d4b1d0a1c2b3309e&fr=userbar"
+                                                                           target="_blank">程序员小鲁</a>
+            </div>
+        </div>
+
+    </div>
+
+    </script>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="../../../../js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?true";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

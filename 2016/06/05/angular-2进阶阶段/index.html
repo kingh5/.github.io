@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>angularJS进阶阶段(2) | 程序员小鲁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这是一篇angular文章，主要讲解angular的功能代码和详细说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularJS进阶阶段(2)">
+<meta property="og:url" content="http://yoursite.com/2016/06/05/angular-2进阶阶段/index.html">
+<meta property="og:site_name" content="程序员小鲁">
+<meta property="og:description" content="这是一篇angular文章，主要讲解angular的功能代码和详细说明">
+<meta property="og:image" content="http://yoursite.com/img/angular-2进阶1.png">
+<meta property="og:image" content="http://yoursite.com/img/angular-2进阶2.png">
+<meta property="og:image" content="http://yoursite.com/img/angular-2进阶3.png">
+<meta property="og:updated_time" content="2016-07-25T14:02:22.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularJS进阶阶段(2)">
+<meta name="twitter:description" content="这是一篇angular文章，主要讲解angular的功能代码和详细说明">
+<meta name="twitter:image" content="http://yoursite.com/img/angular-2进阶1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="程序员小鲁" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+    <!-- 加载特效 -->
+    
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+    
+    <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">鲁超群</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="../../../../index.html">博客首页</a></li>
+                        
+                            <li><a href="../../../../works">作品展示</a></li>
+                        
+                            <li><a href="../../../../about">留言打卡</a></li>
+                        
+                            <li><a href="../../../../404">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="../../../../index.html" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="http://git.oschina.net/goodh5" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/lu-chao-qun-63" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/u/5979213215/" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl facebook" target="_blank" href="#" title="facebook">facebook</a>
+                            
+                                <a class="fl rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="../../../../tags/gulp/" style="font-size: 20px;">gulp</a> <a href="../../../../tags/node/" style="font-size: 10px;">node</a> <a href="../../../../tags/php后端/" style="font-size: 10px;">php后端</a> <a href="../../../../tags/php环境配置/" style="font-size: 10px;">php环境配置</a> <a href="../../../../tags/代码压缩/" style="font-size: 20px;">代码压缩</a> <a href="../../../../tags/文件合并/" style="font-size: 20px;">文件合并</a> <a href="../../../../tags/服务器/" style="font-size: 10px;">服务器</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">尹少</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">张小飞</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="../../../../index.html">邵波</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱运动、爱交友、爱旅行、爱生活、喜欢迎接新的挑战，在代码中突破自我！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">鲁超群</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">鲁超群</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="../../../../index.html">博客首页</a></li>
+                
+                    <li><a href="../../../../works">作品展示</a></li>
+                
+                    <li><a href="../../../../about">留言打卡</a></li>
+                
+                    <li><a href="../../../../404">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="../../../../index.html" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="http://git.oschina.net/goodh5" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lu-chao-qun-63" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/u/5979213215/" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="facebook" target="_blank" href="#" title="facebook">facebook</a>
+                    
+                        <a class="rss" target="_blank" href="../../../../atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-angular-2进阶阶段" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+      <time datetime="2016-06-05T07:05:15.000Z" itemprop="datePublished">2016-06-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angularJS进阶阶段(2)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="../../../../categories/gulp使用/">gulp使用</a><a class="article-category-link" href="../../../../categories/gulp使用/html5/">html5</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/代码压缩/">代码压缩</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/文件合并/">文件合并</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="angularJS进阶阶段-2"><a href="#angularJS进阶阶段-2" class="headerlink" title="angularJS进阶阶段(2)"></a>angularJS进阶阶段(2)</h2><h3 id="angularJS的API"><a href="#angularJS的API" class="headerlink" title="angularJS的API"></a>angularJS的API</h3><p>AngularJS提供了一些功能的封装，但是当你试图通过全局对象angular去 访问这些功能时，却发现与以往遇到的库大不相同。</p>
+<blockquote>
+<ul>
+<li>$http<br>  比如，在jQuery中，我们知道它的API通过一个全局对象：$ 暴露出来，当你需要 进行ajax调用时，使用$.ajax()就可以了。这样的API很符合思维的预期。</li>
+<li>依赖注入/DI 数据输入<br>  事实上，AngularJS把所有的功能组件都以依赖注入的方式组织起来：<br><img src="/img/angular-2进阶1.png" alt=""></li>
+</ul>
+</blockquote>
+<p>在依赖注入的模式下，所有的组件必须通过容器才能相互访问，这导致了在AngularJS中， 你必须通过一个中介才能获得某个组件的实例对象：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var injector = angular.injector([<span class="string">'ng'</span>]);</div><div class="line">injector.invoke(<span class="keyword">function</span>(<span class="variable">$http</span>)&#123;</div><div class="line">    //<span class="keyword">do</span> sth. with <span class="variable">$http</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这个中介，就是依赖注入模式中的容器，在AngularJS中，被称为：注入器。<br>在→_→的示例中，我们可以看到，我们已经拿到了$http对象，它其实是一个函数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script src=<span class="string">"http://lib.sinaapp.com/js/angular.js/angular-1.2.19/angular.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!--在这里显示<span class="variable">$http</span>的内容--&gt;</div><div class="line">	&lt;div id=<span class="string">"logger"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">angular.element(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	angular.injector([<span class="string">"ng"</span>]).invoke(<span class="keyword">function</span>(<span class="variable">$http</span>)&#123;</div><div class="line">		//将<span class="variable">$http</span>对象转成字符串显示出来</div><div class="line">		var e = document.querySelector(<span class="string">"#logger"</span>);</div><div class="line">		angular.element(e).text(<span class="variable">$http</span>.toString());</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="注入器"><a href="#注入器" class="headerlink" title="注入器"></a>注入器</h3><p><code>注入器是AngularJS框架实现和应用开发的关键，这是一个DI/IoC容器的实现。</code><br>AngularJS将功能分成了不同类型的组件分别实现，这些组件有一个统称 - 供给者/provider， 下图中列出了AngularJS几个常用的内置服务：<br><img src="/img/angular-2进阶2.png" alt=""></p>
+<p>AngularJS的组件之间不可以互相直接调用，一个组件必须通过注入器才 可以调用另一个组件。这样的好处是组件之间相互解耦，对象的整个生命周期的管理 甩给了注入器。</p>
+<blockquote>
+<p>注入器实现了两个重要的功能：</p>
+<ol>
+<li>集中存储所有provider的配方<br>配方其实就是：名称+类构造函数。AngularJS启动时，这些provider首先使用其配方在注入器 内注册。比如，http请求服务组件封装在$httpProvider类内，它通过”$http”这个名字在注入器内注册。</li>
+<li>按需提供功能组件的实例<br>其他组件，比如一个用户的控制器，如果需要使用http功能，使用”$http”这个名字 向注入器请求，就可以获得一个http服务实例了。</li>
+</ol>
+</blockquote>
+<h3 id="注册服务组件"><a href="#注册服务组件" class="headerlink" title="注册服务组件"></a>注册服务组件</h3><p>从injector的角度看，组件就是一个功能提供者，因此被称为供给者/Provider。 在AngularJS中，provider以JavaScript类（构造函数）的形式封装。<br><img src="/img/angular-2进阶3.png" alt=""><br>服务名称通常使用一个字符串标识，比如”$http”代表http调用服务、”$rootScope”代表根 作用域对象、”$compile”代表编译服务…<br>Provider类要求提供一个$get函数（类工厂），injector通过调用该函数， 就可以获得服务组件的实例。<br>名称和类函数的组合信息，被称为配方。injector中维护一个集中的配方库， 用来按需创建不同的组件。这个配方库，其实就是一个Hash对象，key就是服务名称，value 就是类定义。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script src=<span class="string">"http://lib.sinaapp.com/js/angular.js/angular-1.2.19/angular.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!--在这里显示ezHello实例的内容--&gt;</div><div class="line">	&lt;div id=<span class="string">"logger"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"></div><div class="line">//在ezstuff模块上登记一个服务ezHello</div><div class="line">angular.module(<span class="string">"ezstuff"</span>,[])</div><div class="line">.provider(<span class="string">"ezHello"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//<span class="variable">$get</span>方法是一个类工厂，返回服务的实例</div><div class="line">	this.<span class="variable">$get</span> = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">"hello,world!"</span>;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">angular.element(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	angular.injector([<span class="string">"ng"</span>,<span class="string">"ezstuff"</span>]).invoke(<span class="keyword">function</span>(ezHello)&#123;</div><div class="line">		//将ezHello实例对象转成字符串显示出来</div><div class="line">		var e = document.querySelector(<span class="string">"#logger"</span>);</div><div class="line">		angular.element(e).text(ezHello);</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="获得注入器对象"><a href="#获得注入器对象" class="headerlink" title="获得注入器对象"></a>获得注入器对象</h3><p>要使用AngularJS的功能，必须首先获取注入器。有两种方法取得注入器。</p>
+<blockquote>
+<ol>
+<li>创建一个新的注入器<br>如果AngularJS框架已经启动，那么可以使用DOM对象的injector()方法获 得已经创建的注入器：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var element = angular.element(dom_element);</div><div class="line">var injector = element.injector();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="通过注入器调用API"><a href="#通过注入器调用API" class="headerlink" title="通过注入器调用API"></a>通过注入器调用API</h3><p>注入器有两个方法可供进行API调用：invoke()和get()。</p>
+<h4 id="invoke"><a href="#invoke" class="headerlink" title="invoke()"></a>invoke()</h4><blockquote>
+<p>使用注入器的invoke()方法，可以直接调用一个用户自定义的函数体，并通过函数参数 注入所依赖的服务对象，这是AngularJS推荐和惯例的用法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">angular.injector([<span class="string">'ng'</span>])</div><div class="line">invoke(<span class="keyword">function</span>(<span class="variable">$http</span>)&#123;</div><div class="line">    //<span class="keyword">do</span> sth. with <span class="variable">$http</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>下面的示例这次使用了get()方法直接获取一个服务实例，感受一下！</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script src=<span class="string">"http://lib.sinaapp.com/js/angular.js/angular-1.2.19/angular.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!--在这里显示ezHello实例的内容--&gt;</div><div class="line">	&lt;div id=<span class="string">"logger"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">//在ezstuff模块上登记一个服务ezHello</div><div class="line">angular.module(<span class="string">"ezstuff"</span>,[])</div><div class="line">.provider(<span class="string">"ezHello"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//<span class="variable">$get</span>方法是一个类工厂，返回服务的实例</div><div class="line">	this.<span class="variable">$get</span> = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">"hello,world!"</span>;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">angular.element(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//直接通过注入器获取ezHello实例对象</div><div class="line">	var myHello = angular.injector([<span class="string">"ng"</span>,<span class="string">"ezstuff"</span>]).get(<span class="string">"ezHello"</span>);</div><div class="line">	//将ezHello实例对象转成字符串显示出来</div><div class="line">	var e = document.querySelector(<span class="string">"#logger"</span>);</div><div class="line">	angular.element(e).text(myHello);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="注入器的方式和原理"><a href="#注入器的方式和原理" class="headerlink" title="注入器的方式和原理"></a>注入器的方式和原理</h3><p>有两种方法告知注入器需要注入的服务对象：参数名注入和依赖数组注入。</p>
+<h4 id="1-参数名注入"><a href="#1-参数名注入" class="headerlink" title="1. 参数名注入"></a>1. 参数名注入</h4><p>AngularJS在执行invoke()函数时，将待注入函数定义转化为字符串，通过 正则表达式检查其参数表，从而发现并注入所所依赖的服务对象：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.//myfunc通过参数表声明这个函数依赖于<span class="string">"<span class="variable">$http</span>"</span>服务</div><div class="line">2.var myfunc = <span class="keyword">function</span>(<span class="variable">$http</span>)&#123;</div><div class="line">3.    //<span class="keyword">do</span> sth. with <span class="variable">$http</span></div><div class="line">4.&#125;;</div><div class="line">5.injector.invoke(myfunc);//myfunc的定义将被转化为字符串进行参数名检查</div></pre></td></tr></table></figure></p>
+<p>这样有一个问题，就是当我们对JavaScript代码进行压缩处理时，$http可能会被 变更成其他名称，这将导致注入失败。</p>
+<h4 id="2-依赖数组注入"><a href="#2-依赖数组注入" class="headerlink" title="2. 依赖数组注入"></a>2. 依赖数组注入</h4><p>AngularJS采用依赖项数组的方法解决代码压缩混淆产生的问题。这时传入invoke()的 是一个数组，数组的最后一项是实际要执行的函数，其他项则指明需要向该函数注入 的服务名称。注入器将按照数组中的顺序，依次向函数注入依赖对象。<br>采用这种方法，待注入函数的参数表的名称就无关紧要了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.//myfunc依赖于<span class="string">"<span class="variable">$http</span>"</span>和<span class="string">"<span class="variable">$compile</span>"</span>服务</div><div class="line">2.var myfunc = [<span class="string">"<span class="variable">$http</span>"</span>,<span class="string">"<span class="variable">$compile</span>"</span>,<span class="keyword">function</span>(p1,p2)&#123;</div><div class="line">3.    //<span class="keyword">do</span> sth. with p1(<span class="variable">$http</span>),p2(<span class="variable">$compile</span>)</div><div class="line">4.&#125;];</div><div class="line">5.injector.invoke(myfunc);</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script src=<span class="string">"http://lib.sinaapp.com/js/angular.js/angular-1.2.19/angular.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;!--在这里显示ezHello实例的内容--&gt;</div><div class="line">	&lt;div id=<span class="string">"logger"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">//在ezstuff模块上登记一个服务ezHello</div><div class="line">angular.module(<span class="string">"ezstuff"</span>,[])</div><div class="line">.provider(<span class="string">"ezHello"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//<span class="variable">$get</span>方法是一个类工厂，返回服务的实例</div><div class="line">	this.<span class="variable">$get</span> = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">"hello,world!"</span>;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">angular.element(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	angular.injector([<span class="string">"ng"</span>,<span class="string">"ezstuff"</span>]).invoke([<span class="string">"ezHello"</span>,<span class="keyword">function</span>(hhh)&#123;</div><div class="line">		//将ezHello实例对象转成字符串显示出来</div><div class="line">		var e = document.querySelector(<span class="string">"#logger"</span>);</div><div class="line">		angular.element(e).text(hhh);</div><div class="line">	&#125;]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="友情提醒"><a href="#友情提醒" class="headerlink" title="友情提醒"></a>友情提醒</h2><p>如有疑问和错误之处，请告知<a href="http://weibo.com/5979213215/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="_blank" rel="external">程序员小鲁</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<div class="copyright">
+    <p><span>本文标题:</span><a href="">angularJS进阶阶段(2)</a></p>
+    <p><span>文章作者:</span><a href="/" title="请访问 鲁超群 博客">鲁超群</a></p>
+    <!-- <p><span>发布时间:</span>2016年06月05日 - 15时05分</p> -->
+    <!-- <p><span>最后更新:</span>2016年07月25日 - 22时02分</p> -->
+    <p>
+        <span>原始链接:</span><a class="post-url" href="" title="angularJS进阶阶段(2)">http://yoursite.com/2016/06/05/angular-2进阶阶段/</a>
+        <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/05/angular-2进阶阶段/　　作者: 鲁超群" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+        <script src="/js/clipboard.min.js"></script>
+        <script> var clipboard = new Clipboard('.copy-path'); </script>
+    </p>
+    <p>
+        <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+<nav id="article-nav">
+    
+    <a href="../../08/angular-3进阶阶段/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"><</strong>
+        <div class="article-nav-title">
+            
+            angularJS进阶阶段(3)
+            
+        </div>
+    </a>
+    
+    
+    <a href="../../../05/25/angular-1进阶阶段/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">angularJS进阶阶段(1)</div>
+        <strong class="article-nav-caption">></strong>
+    </a>
+    
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#angularJS进阶阶段-2"><span class="toc-number">1.</span> <span class="toc-text">angularJS进阶阶段(2)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#angularJS的API"><span class="toc-number">1.1.</span> <span class="toc-text">angularJS的API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注入器"><span class="toc-number">1.2.</span> <span class="toc-text">注入器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注册服务组件"><span class="toc-number">1.3.</span> <span class="toc-text">注册服务组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获得注入器对象"><span class="toc-number">1.4.</span> <span class="toc-text">获得注入器对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过注入器调用API"><span class="toc-number">1.5.</span> <span class="toc-text">通过注入器调用API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#invoke"><span class="toc-number">1.5.1.</span> <span class="toc-text">invoke()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注入器的方式和原理"><span class="toc-number">1.6.</span> <span class="toc-text">注入器的方式和原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-参数名注入"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 参数名注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-依赖数组注入"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. 依赖数组注入</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#友情提醒"><span class="toc-number">2.</span> <span class="toc-text">友情提醒</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/06/05/angular-2进阶阶段/" data-title="angularJS进阶阶段(2)" data-url="http://yoursite.com"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="../../08/angular-3进阶阶段/" title="上一篇: angularJS进阶阶段(3)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="../../../05/25/angular-1进阶阶段/" title="下一篇: angularJS进阶阶段(1)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../07/15/hello-world/">nodeJS服务器使用</a></li><li class="post-list-item"><a class="post-list-link" href="../../08/angular-4进阶阶段/">angularJS进阶阶段(4)</a></li><li class="post-list-item"><a class="post-list-link" href="../../08/angular-3进阶阶段/">angularJS进阶阶段(3)</a></li><li class="post-list-item"><a class="post-list-link" href="">angularJS进阶阶段(2)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/25/angular-1进阶阶段/">angularJS进阶阶段(1)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/23/angular-2基础总结/">angular基础总结(2)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/22/angular-1基础总结/">angular基础总结(1)</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/05/phpstorm环境配置/">phpStorm编辑器环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/18/gulp-4/">gulp-4的项目实践</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/16/gulp-3/">gulp-3的插件安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/16/gulp-2/">gulp-2的工作方式</a></li><li class="post-list-item"><a class="post-list-link" href="../../../04/15/gulp-1/">gulp-1的使用</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 鲁超群
+            </div>
+            <div class="footer-right">
+                个人博客，如有错误请联系贴吧--
+                <a href="http://tieba.baidu.com/home/main?id=8940b3ccd0f2d4b1d0a1c2b3309e&fr=userbar"
+                                                                           target="_blank">程序员小鲁</a>
+            </div>
+        </div>
+
+    </div>
+
+    </script>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="../../../../js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?true";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
